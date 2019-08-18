@@ -1,4 +1,4 @@
-<!doctype= html> <!-- Página criada por Vicente Parmigiani em 24/12/15 às 21h-->
+<!doctype= html> <!-- PÃ¡gina criada por Vicente Parmigiani em 24/12/15 Ã s 21h-->
 <html lang="pt">
 	<head>
 		<title>BB-8</title>
@@ -60,7 +60,7 @@
 			var tellanswer;
 			
 			function ask() {
-				tellanswer = "Eu não sei!"
+				tellanswer = "Eu nÃ£o sei!"
 				var asw1 = document.getElementById("answer1").value;
 				var asw2 = document.getElementById("answer2").value;
 				var asw3 = document.getElementById("answer3").value;
@@ -68,7 +68,7 @@
 				var rand = Math.random();
 				
 				switch (askType) {
-					case "De quem você mais gosta?":
+					case "De quem vocÃª mais gosta?":
 					 document.getElementById("mode1").className = "";
 					 document.getElementById("mode2").className = "opH";
 					 document.getElementById("mode3").className = "opH";
@@ -78,7 +78,7 @@
 						tellanswer = "Eu gosto mais do(a) " + asw2 + ".";
 					 };
 					 break;
-					case "O quê você prefere?":
+					case "O quÃª vocÃª prefere?":
 					 document.getElementById("mode1").className = "";
 					 document.getElementById("mode2").className = "opH";
 					 document.getElementById("mode3").className = "opH";
@@ -87,12 +87,12 @@
 					 } else if (rand <= 0.6) {
 						tellanswer = "Eu prefiro " + asw2 + ".";
 					 } else if (rand <= 0.8){
-					 	tellanswer = "Eu não gosto de nenhum dos dois.";
+					 	tellanswer = "Eu nÃ£o gosto de nenhum dos dois.";
 					 } else {
 					 	tellanswer = "Eu acho os dois bons.";
 					 }
 					 break;
-					case "Você gosta de...?":
+					case "VocÃª gosta de...?":
 					 document.getElementById("mode1").className = "opH";
 					 document.getElementById("mode2").className = "";
 					 document.getElementById("mode3").className = "opH";
@@ -101,18 +101,18 @@
 					 } else if (rand <= 0.50) {
 						tellanswer = "Sim, eu adoro " + asw3 + ".";
 					 } else if (rand <= 0.75) {
-						tellanswer = "Não.";
+						tellanswer = "NÃ£o.";
 					 } else {
-						tellanswer = "Não, eu odeio " + asw3 + ".";
+						tellanswer = "NÃ£o, eu odeio " + asw3 + ".";
 					 };
 					 break;
-					case "Qual é sua idade?":
+					case "Qual Ã© sua idade?":
 					 document.getElementById("mode1").className = "opH";
 					 document.getElementById("mode2").className = "opH";
 					 document.getElementById("mode3").className = "";
 					 tellanswer = "Pelo o que meus dados indicam, eu tenho aproximadamente 5 anos.";
 					 break;
-					case "Você têm...?":
+					case "VocÃª tÃªm...?":
 					 document.getElementById("mode1").className = "opH";
 					 document.getElementById("mode2").className = "";
 					 document.getElementById("mode3").className = "opH";
@@ -121,14 +121,14 @@
 					 } else if (rand <= 0.5) {
 						tellanswer = "Sim, eu tenho " + asw3 + ".";
 					 } else if (rand <= 0.70) {
-						tellanswer = "Não.";
+						tellanswer = "NÃ£o.";
 					 } else if (rand <= 0.85) {
-						tellanswer = "Não, eu não tenho " + asw3 + ".";
+						tellanswer = "NÃ£o, eu nÃ£o tenho " + asw3 + ".";
 					 } else {
-						tellanswer = "Não, mas eu gostaria de ter " + asw3 + ".";
+						tellanswer = "NÃ£o, mas eu gostaria de ter " + asw3 + ".";
 					 };
 					 break;
-					case "Você está...?":
+					case "VocÃª estÃ¡...?":
 					 document.getElementById("mode1").className = "opH";
 					 document.getElementById("mode2").className = "";
 					 document.getElementById("mode3").className = "opH";
@@ -137,9 +137,9 @@
 					 } else if (rand <= 0.5) {
 						tellanswer = "Sim, um pouco.";
 					 } else if (rand <= 0.75) {
-						tellanswer = "Não agora.";
+						tellanswer = "NÃ£o agora.";
 					 } else {
-						tellanswer = "Não, eu nunca estive " + asw3 + " antes.";
+						tellanswer = "NÃ£o, eu nunca estive " + asw3 + " antes.";
 					 };
 					 break;
 				};
@@ -157,7 +157,7 @@
 			};
 			
 			function talkNOW() {
-				alert("Ainda não posso falar.")
+				alert("Ainda nÃ£o posso falar.")
 			}
 			
 		</script>
@@ -169,8 +169,8 @@
 			<h1>BB<text style="color:orange">-8</text></h1>
 		</div>
 		<div>
-			<img src="E:/HTML PAGES/Images/bb8base.png" id="base" class="base" style="animation-duration: 1s;">
-			<img src="E:/HTML PAGES/Images/bb8head.png" id="head" class="head" style="animation-duration: 5s;transform: rotateY(180deg)">
+			<img src="Images/bb8base.png" id="base" class="base" style="animation-duration: 1s;">
+			<img src="Images/bb8head.png" id="head" class="head" style="animation-duration: 5s;transform: rotateY(180deg)">
 		</div>
 		<div id="detectHover" class="detect" onmouseover="openMenu()"></div>
 		<div id="detectHover" class="detect2" onmouseover="openMenu2()"></div>
@@ -205,12 +205,12 @@
 				<text>Pergunta:</text>
 				<br><br>
 				<select id="asktype" onload="ask()">
-					<option>De quem você mais gosta?</option>
-					<option>Qual é sua idade?</option>
-					<option>O quê você prefere?</option>
-					<option>Você gosta de...?</option>
-					<option>Você têm...?</option>
-					<option>Você está...?</option>
+					<option>De quem vocÃª mais gosta?</option>
+					<option>Qual Ã© sua idade?</option>
+					<option>O quÃª vocÃª prefere?</option>
+					<option>VocÃª gosta de...?</option>
+					<option>VocÃª tÃªm...?</option>
+					<option>VocÃª estÃ¡...?</option>
 				</select>
 			</div>
 			<br/><hr/><br/>
