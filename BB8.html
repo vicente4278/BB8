@@ -1,0 +1,235 @@
+<!doctype= html> <!-- Página criada por Vicente Parmigiani em 24/12/15 às 21h-->
+<html lang="pt">
+	<head>
+		<title>BB-8</title>
+		<link rel="icon" type="image/png" href="?" />
+		<link rel="stylesheet" type="text/css" href="BB8.css">
+		<meta charset="ISO-8859-1">
+		<script>
+			
+			function openMenu() {
+				document.getElementById("menu").className = "menuV";
+			}
+			function closeMenu() {
+				document.getElementById("menu").className = "menuH";
+			}
+			function openMenu2() {
+				document.getElementById("menu2").className = "menuV2";
+			}
+			function closeMenu2() {
+				document.getElementById("menu2").className = "menuH2";
+			}
+			
+			function setVel(vel) {
+				document.getElementById("ratio1").className = "ru"
+				document.getElementById("ratio2").className = "ru"
+				document.getElementById("ratio3").className = "ru"
+				document.getElementById("ratio4").className = "ru"
+				document.getElementById("ratio5").className = "ru"
+				document.getElementById("ratio6").className = "ru"
+				document.getElementById("head").style["animation-duration"] = "5s";
+				
+				document.getElementById("ratio"+vel).className = "rs"
+				
+				switch (vel) {
+					case 1:
+					 document.getElementById("base").style["animation-duration"] = "0s";
+					 document.getElementById("head").style["animation-duration"] = "15s";
+					 break;
+					case 2:
+					 document.getElementById("base").style["animation-duration"] = "7s";
+					 break;
+					case 3:
+					 document.getElementById("base").style["animation-duration"] = "5s";
+					 break;
+					case 4:
+					 document.getElementById("base").style["animation-duration"] = "3s";
+					 break;
+					case 5:
+					 document.getElementById("base").style["animation-duration"] = "1s";
+					 break;
+					case 6:
+					 document.getElementById("base").style["animation-duration"] = "0.5s";
+					 document.getElementById("head").style["animation-duration"] = "2s";
+					 break;
+					default:
+					 document.getElementById("base").style["animation-duration"] = "0s";
+				};
+			};
+			
+			var tellanswer;
+			
+			function ask() {
+				tellanswer = "Eu não sei!"
+				var asw1 = document.getElementById("answer1").value;
+				var asw2 = document.getElementById("answer2").value;
+				var asw3 = document.getElementById("answer3").value;
+				var askType = document.getElementById("asktype").value;
+				var rand = Math.random();
+				
+				switch (askType) {
+					case "De quem você mais gosta?":
+					 document.getElementById("mode1").className = "";
+					 document.getElementById("mode2").className = "opH";
+					 document.getElementById("mode3").className = "opH";
+					 if (rand <= 0.5) {
+						tellanswer = "Eu gosto mais do(a) " + asw1 + ".";
+					 } else {
+						tellanswer = "Eu gosto mais do(a) " + asw2 + ".";
+					 };
+					 break;
+					case "O quê você prefere?":
+					 document.getElementById("mode1").className = "";
+					 document.getElementById("mode2").className = "opH";
+					 document.getElementById("mode3").className = "opH";
+					 if (rand <= 0.3) {
+						tellanswer = "Eu prefiro " + asw1 + ".";
+					 } else if (rand <= 0.6) {
+						tellanswer = "Eu prefiro " + asw2 + ".";
+					 } else if (rand <= 0.8){
+					 	tellanswer = "Eu não gosto de nenhum dos dois.";
+					 } else {
+					 	tellanswer = "Eu acho os dois bons.";
+					 }
+					 break;
+					case "Você gosta de...?":
+					 document.getElementById("mode1").className = "opH";
+					 document.getElementById("mode2").className = "";
+					 document.getElementById("mode3").className = "opH";
+					 if (rand <= 0.25) {
+						tellanswer = "Sim.";
+					 } else if (rand <= 0.50) {
+						tellanswer = "Sim, eu adoro " + asw3 + ".";
+					 } else if (rand <= 0.75) {
+						tellanswer = "Não.";
+					 } else {
+						tellanswer = "Não, eu odeio " + asw3 + ".";
+					 };
+					 break;
+					case "Qual é sua idade?":
+					 document.getElementById("mode1").className = "opH";
+					 document.getElementById("mode2").className = "opH";
+					 document.getElementById("mode3").className = "";
+					 tellanswer = "Pelo o que meus dados indicam, eu tenho aproximadamente 5 anos.";
+					 break;
+					case "Você têm...?":
+					 document.getElementById("mode1").className = "opH";
+					 document.getElementById("mode2").className = "";
+					 document.getElementById("mode3").className = "opH";
+					 if (rand <= 0.25) {
+						tellanswer = "Sim.";
+					 } else if (rand <= 0.5) {
+						tellanswer = "Sim, eu tenho " + asw3 + ".";
+					 } else if (rand <= 0.70) {
+						tellanswer = "Não.";
+					 } else if (rand <= 0.85) {
+						tellanswer = "Não, eu não tenho " + asw3 + ".";
+					 } else {
+						tellanswer = "Não, mas eu gostaria de ter " + asw3 + ".";
+					 };
+					 break;
+					case "Você está...?":
+					 document.getElementById("mode1").className = "opH";
+					 document.getElementById("mode2").className = "";
+					 document.getElementById("mode3").className = "opH";
+					 if (rand <= 0.25) {
+						tellanswer = "Sim, eu estou muito " + asw3 + "!";
+					 } else if (rand <= 0.5) {
+						tellanswer = "Sim, um pouco.";
+					 } else if (rand <= 0.75) {
+						tellanswer = "Não agora.";
+					 } else {
+						tellanswer = "Não, eu nunca estive " + asw3 + " antes.";
+					 };
+					 break;
+				};
+			};
+			
+			function resetanswer() {
+				document.getElementById("dialogBox").style["animation-name"] = "";
+				document.getElementById("all").style["animation-name"] = "";
+			}
+			function answer() {
+				document.getElementById("dialogBox").style["animation-name"] = "dialogBox";
+				document.getElementById("all").style["animation-name"] = "darkback";
+				document.getElementById("dialogBox").className = "answer";
+				document.getElementById("finalasw").innerHTML = tellanswer;
+			};
+			
+			function talkNOW() {
+				alert("Ainda não posso falar.")
+			}
+			
+		</script>
+		<meta charset="">
+	</head>
+	<body>
+		<div class="all" id="all" style>
+		<div>
+			<h1>BB<text style="color:orange">-8</text></h1>
+		</div>
+		<div>
+			<img src="E:/HTML PAGES/Images/bb8base.png" id="base" class="base" style="animation-duration: 1s;">
+			<img src="E:/HTML PAGES/Images/bb8head.png" id="head" class="head" style="animation-duration: 5s;transform: rotateY(180deg)">
+		</div>
+		<div id="detectHover" class="detect" onmouseover="openMenu()"></div>
+		<div id="detectHover" class="detect2" onmouseover="openMenu2()"></div>
+		<div id="menu" class="menuH" onmouseover="openMenu()" onmouseout="closeMenu()">
+			<h3>MENU BB-8</h3>
+			<br><br>
+			<div>
+				<text>Velocidade:</text>
+				<br/><br/>
+				<span id="options">
+					<div id="ratio1" onclick="setVel(1)" class="ru" style="background-color: darkred"></div>
+					<div id="ratio2" onclick="setVel(2)" class="ru" style="background-color: red"></div>
+					<div id="ratio3" onclick="setVel(3)" class="ru" style="background-color: orange"></div>
+					<div id="ratio4" onclick="setVel(4)" class="ru" style="background-color: yellow"></div>
+					<div id="ratio5" onclick="setVel(5)" class="rs" style="background-color: lightgreen"></div>
+					<div id="ratio6" onclick="setVel(6)" class="ru" style="background-color: forestgreen"></div>
+				</span>
+			</div>
+			<div>
+				<br><br><br>
+				<text>Fale:</text>
+				<br><br>
+				<span id="options">
+					<div id="talk" onclick="talkNOW()">Fale BB-8</div>
+				</span>
+			</div>
+		</div>
+		<div id="menu2" class="menuH2" onmouseover="openMenu2()" onmouseout="closeMenu2()" onload="ask()" onchange="ask()">
+			<h3>PERGUNTE AO BB-8</h3>
+			<br><br><br>
+			<div>
+				<text>Pergunta:</text>
+				<br><br>
+				<select id="asktype" onload="ask()">
+					<option>De quem você mais gosta?</option>
+					<option>Qual é sua idade?</option>
+					<option>O quê você prefere?</option>
+					<option>Você gosta de...?</option>
+					<option>Você têm...?</option>
+					<option>Você está...?</option>
+				</select>
+			</div>
+			<br/><hr/><br/>
+			<span id="mode1" class="">
+				<input type="text" id="answer1" value onkeydown="openMenu2()">
+				<br/><text>ou</text><br/>
+				<input type="text" id="answer2" value onkeydown="openMenu2()">
+			</span>
+			<span id="mode2" class="opH">
+				<input type="text" id="answer3" value onkeydown="openMenu2()">
+			</span>
+			<span id="mode3" class="opH">
+			</span>
+			<input type="button" class="thatbutton" value="Perguntar" id="ask" onclick="answer()" onmouseover="ask()" onmousedown="resetanswer()">
+		</div>
+		</div>
+		<div id="dialogBox" class="hidden" style>
+			<h2>BB-8 diz:</h2>
+			<span id="finalasw"></span>
+		</div>
+	</body>
+</html>

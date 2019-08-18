@@ -1,0 +1,191 @@
+body {
+	background-image: url("E:/HTML PAGES/Images/Stars.png");
+	background-attachment: fixed;
+	color: #FFF;
+	font-family: "Arial", serif;
+	text-align: center;
+}
+h1 {
+	font-size: 100pt;
+}
+.base {
+	transform: rotate(0deg);
+	position: fixed;
+	left: 32%;
+	top: 45%;
+	animation-name: rotateBase;
+	/*animation-duration: 0.5s;*/
+	animation-delay: 0.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-direction: normal;
+}
+@keyframes rotateBase {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(-360deg); }
+}
+.head {
+	position: fixed;
+	top: 33%;
+	width: 240px;
+	height: 171px;
+	animation-name: moveHead;
+	animation-duration: 5s;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+	animation-direction: normal;
+}
+@keyframes moveHead {
+	0% { left: 40%; transform: rotateZ(0deg);}
+	25% { left: 44%; transform: rotateZ(15deg);}
+	50% { left: 40%; transform: rotateZ(0deg);}
+	75% { left: 36%; transform: rotateZ(-15deg);}
+	100% { left: 40%; transform: rotateZ(0deg);}
+}
+.detect {
+	position: fixed;
+	width: 40px;
+	height:500px;
+	left: 0px;
+	bottom: 50px;
+}
+.detect2 {
+	position: fixed;
+	width: 40px;
+	height:500px;
+	right: 0px;
+	bottom: 50px;
+}
+.menuV, .menuH, .menuV2, .menuH2 {
+	position: fixed;
+	background-color: rgba(255, 255, 255, 0.9);
+	width: 200px;
+	height: 500px;
+	transition-duration: 1s;
+	padding: 15px;
+	color: black;
+}
+.menuV {
+	left: 0px;
+	bottom: 50px;
+}
+.menuH {
+	left: -220px;
+	bottom: 50px;
+	transition-delay: 3s;
+}
+.menuV2 {
+	right: 0px;
+	bottom: 50px;
+}
+.menuH2 {
+	right: -220px;
+	bottom: 50px;
+	transition-delay: 3s;
+}
+.ts {
+	font-size: 10pt;
+}
+input[type="radio"] {
+	margin: 0px;
+}
+.ru {
+	display: inline;
+	width: 13px;
+	height: 13px;
+	border-style: solid;
+	border-color: black;
+	border-radius: 50%;
+	margin: 1px;
+	padding-left: 13px;
+	cursor: pointer;
+}
+.rs {
+	display: inline;
+	width: 13px;
+	height: 13px;
+	border-style: solid;
+	border-color: lightcoral;
+	border-radius: 50%;
+	margin: 1px;
+	padding-left: 13px;
+}
+#talk {
+	padding: 5px;
+	border-style: solid;
+	border-color: black;
+	background-color: gray;
+	color: white;
+	box-shadow: 0px 0px 5px black;
+	cursor: pointer;
+	transition-duration: 0.2s;
+}
+#talk:active {
+	box-shadow: 0px 0px 0px black;
+}
+.opH {
+	visibility: hidden;
+	position: fixed;
+	left: -300%;
+}
+.answer {
+	color: black;
+	background-color: white;
+	width: 400px;
+	height: 200px;
+	position: fixed;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	box-shadow: 0px 0px 10px black;
+	left: 525px;
+	top: -210px;
+	animation-iteration-count: 1;
+	animation-duration: 5s;
+	animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+@keyframes dialogBox {
+	0% { top: -210px; }
+	20% { top: 120px; }
+	80% { top: 120px; }
+	100% { top: -210px; }
+}
+.all {
+	position: relative;
+	animation-iteration-count: 1;
+	animation-duration: 5s;
+	animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+@keyframes darkback {
+	0% {}
+	20% { -webkit-filter: brightness(15%); }
+	80% { -webkit-filter: brightness(15%);}
+	100% {}
+}
+.hidden {
+	position: fixed;
+	bottom: -300%;
+}
+input[type="button"] {
+	background-color: white;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 100% 100% 0% 0%;
+	border-color: orange;
+	margin: 10px;
+	padding: 15px;
+	font-size: 15pt;
+	box-shadow: 0px 0px 10px black;
+	transition-duration: 0.2s;
+}
+input[type="button"]:hover {
+	background-color: #F1F1F1;
+}
+input[type="button"]:active {
+	box-shadow: 0px 0px 0px black;
+}
+.thatbutton {
+	position: relative;
+	top: 150px;
+}
